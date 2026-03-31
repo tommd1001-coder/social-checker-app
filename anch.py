@@ -78,7 +78,7 @@ def check_single_link(line, target_domain, search_bio):
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
-    #options.add_argument(f'--proxy-server={PROXY_SERVER}')
+    options.add_argument(f'--proxy-server={PROXY_SERVER}')
     
     # Random User-Agent để tránh bị nhận diện pattern
     user_agents = [
