@@ -16,8 +16,8 @@ from selenium.webdriver.support import expected_conditions as EC
 #Chưa mở xoay(proxy, xoay)
 #3
 # CẤU HÌNH IPFAKE
-PROXY_SERVER = "svhn3.proxyxoay.net:45802"
-API_KEY = "974ffcb0-ed69-4723-9297-97c339777092"
+PROXY_SERVER = "eu1.proxyxoay.net:8114"
+API_KEY = "995c2354-432f-4bd2-bf8a-77df22dc8ea4"
 
 st.set_page_config(page_title="SOCIAL FINAL STEALTH", layout="wide")
 
