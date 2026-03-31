@@ -38,8 +38,8 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 def rotate_ip():
-    api_key = "974ffcb0-ed69-4723-9297-97c339777092"
-    url = f"https://proxyxoay.net/api/rotating-proxy/change-key-ip/{api_key}"
+    #api_key = "974ffcb0-ed69-4723-9297-97c339777092"
+    #url = f"https://proxyxoay.net/api/rotating-proxy/change-key-ip/{api_key}"
     
     try:
         response = requests.get(url, timeout=15)
@@ -64,7 +64,7 @@ def rotate_ip():
 # 2: LOGIC CHÍNH -----
 
 def check_single_link(line, target_domain, search_bio):
-    rotate_ip()
+    #rotate_ip()
     # Tách dòng input
     parts = line.split(maxsplit=1)
     src = parts[0].strip() if len(parts) > 0 else ""
