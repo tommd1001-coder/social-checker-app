@@ -38,8 +38,8 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 def rotate_ip():
-    #api_key = "974ffcb0-ed69-4723-9297-97c339777092"
-    #url = f"https://proxyxoay.net/api/rotating-proxy/change-key-ip/{api_key}"
+    api_key = "995c2354-432f-4bd2-bf8a-77df22dc8ea4"
+    url = f"https://proxyxoay.net/api/rotating-proxy/change-key-ip/{api_key}"
     
     try:
         response = requests.get(url, timeout=15)
@@ -64,7 +64,7 @@ def rotate_ip():
 # 2: LOGIC CHÍNH -----
 
 def check_single_link(line, target_domain, search_bio):
-    #rotate_ip()
+    rotate_ip()
     # Tách dòng input
     parts = line.split(maxsplit=1)
     src = parts[0].strip() if len(parts) > 0 else ""
@@ -239,7 +239,7 @@ def check_single_link(line, target_domain, search_bio):
         return {"src": src, "status": "BLOCKED", "actual_anchor": "N/A", "actual_url": str(e), "bio": "N/A"}
 
 # GIAO DIỆN
-st.title("SOCIAL CHECKER 4 - DEEP SCAN - NO PROXY")
+st.title("SOCIAL CHECKER 4 - DEEP SCAN")
 
 col_set, col_res = st.columns([1, 2.5])
 
@@ -268,10 +268,10 @@ with col_res:
         curr_idx = 0
         for b_idx, batch in enumerate(batches):
             # HIỂN THỊ THÔNG BÁO XOAY IP Ở VÙNG RIÊNG
-            # rotate_status.info(f"🔄 Đang xoay IP cho đợt {b_idx + 1}...")
-            # rotate_ip()
-            # time.sleep(8) 
-            # rotate_status.empty() # Xóa thông báo sau khi xoay xong, không ảnh hưởng đến bảng bên dưới
+            rotate_status.info(f"🔄 Đang xoay IP cho đợt {b_idx + 1}...")
+            rotate_ip()
+            time.sleep(8) 
+            rotate_status.empty() # Xóa thông báo sau khi xoay xong, không ảnh hưởng đến bảng bên dưới
             
             with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor:
                 futures = {executor.submit(check_single_link, line, target_url, target_bio): curr_idx + i for i, line in enumerate(batch)}
